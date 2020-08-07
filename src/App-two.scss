@@ -1,0 +1,112 @@
+body {
+  * {
+    outline: none !important;
+  }
+}
+
+#root {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.App {
+  background-image: url(./foms-bg.svg);
+  background-repeat: no-repeat;
+  border-radius: 20px;
+  background-color: #21254a;
+  padding: 124px 20px 13px;
+}
+
+.forms-sing-up {
+  padding: 63px 0 93px;
+}
+
+.forms-log-in {
+  padding: 50px 0 93px;
+}
+
+.title {
+  max-width: 252px;
+  color: #ffffff;
+  font-size: 36px;
+  line-height: 38px;
+}
+
+.Forms {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+  font-size: 18px;
+  line-height: 21px;
+  color: rgba(255, 255, 255, 0.6);
+  transition: all 0.2s linear;
+}
+
+.inactive {
+  position: absolute;
+  margin-top: 8px;
+}
+
+.active {
+  position: absolute;
+  font-size: 0.8rem;
+  margin-top: -10px;
+  color: #3784bb;
+}
+
+input {
+  padding: 0;
+  width: 333px;
+  height: 37px;
+  background-color: inherit;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+  margin-bottom: 37px;
+  color: #ffffff;
+}
+
+.btn-wrap,
+.links-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.links-wrap {
+  margin-bottom: 36px;
+}
+
+.links,
+.links-text {
+  font-size: 14px;
+  line-height: 16px;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+}
+
+.links {
+  text-decoration-line: underline;
+}
+
+.links-text {
+  margin-right: 5px;
+}
+
+.btn {
+  border: none;
+  padding: 12.5px 26.5px;
+  font-size: 20px;
+  line-height: 23px;
+  background-color: #833ac7;
+  box-shadow: 0px 9px 8px rgba(0, 0, 0, 0.36);
+  border-radius: 10px;
+  cursor: pointer;
+  color: #ffffff;
+  &:hover {
+    background-color: #6d31a5;
+  }
+}

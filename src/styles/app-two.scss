@@ -11,20 +11,24 @@ body {
   justify-content: center;
 }
 
-.App {
-  background-image: url(./foms-bg.svg);
+.form-container {
+  background-image: url(../foms-bg.svg);
   background-repeat: no-repeat;
   border-radius: 20px;
   background-color: #21254a;
-  padding: 124px 20px 13px;
+  padding: 100px 20px 20px;
 }
 
 .forms-sing-up {
-  padding: 63px 0 93px;
+  padding: 46px 0 0;
 }
 
 .forms-log-in {
-  padding: 50px 0 93px;
+  padding: 43px 0 0;
+}
+
+.forms-forgot-pass {
+  padding: 106px 0 0;
 }
 
 .title {
@@ -44,6 +48,8 @@ label {
   font-size: 18px;
   line-height: 21px;
   color: rgba(255, 255, 255, 0.6);
+  cursor: default;
+  pointer-events: none;
   transition: all 0.2s linear;
 }
 
@@ -52,11 +58,16 @@ label {
   margin-top: 8px;
 }
 
-.active {
+.active,
+.label-red {
   position: absolute;
   font-size: 0.8rem;
   margin-top: -10px;
   color: #3784bb;
+}
+
+.label-red {
+  color: red;
 }
 
 input {
@@ -66,18 +77,56 @@ input {
   background-color: inherit;
   border: none;
   border-bottom: 1px solid rgba(255, 255, 255, 0.6);
-  margin-bottom: 37px;
   color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.color-red {
+  border-color: red;
+}
+
+.email,
+.name,
+.password-two {
+  margin-bottom: 36px;
+}
+
+.password {
+  margin-bottom: 41px;
+}
+
+.verification-pass {
+  margin-bottom: 46px;
+}
+
+.email-two {
+  margin-bottom: 27px;
 }
 
 .btn-wrap,
-.links-wrap {
+.links-wrap,
+.links-sign,
+.links-log,
+.links-forgot-pass {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .links-wrap {
-  margin-bottom: 36px;
+  margin-bottom: 43px;
+}
+
+.links-sign {
+  padding-top: 100px;
+}
+
+.links-log {
+  padding-top: 47px;
+}
+
+.links-forgot-pass {
+  padding-top: 100px;
 }
 
 .links,
@@ -90,15 +139,19 @@ input {
 
 .links {
   text-decoration-line: underline;
+  background: inherit;
+  border: none;
+  cursor: pointer;
 }
 
 .links-text {
   margin-right: 5px;
 }
 
-.btn {
+.btn-sing-up,
+.btn-sing-in,
+.btn-reset {
   border: none;
-  padding: 12.5px 26.5px;
   font-size: 20px;
   line-height: 23px;
   background-color: #833ac7;
@@ -109,4 +162,16 @@ input {
   &:hover {
     background-color: #6d31a5;
   }
+}
+
+.btn-sing-in {
+  padding: 12.5px 26.5px;
+}
+
+.btn-sing-up {
+  padding: 13px 23px 12px;
+}
+
+.btn-reset {
+  padding: 13px 30px 12px;
 }

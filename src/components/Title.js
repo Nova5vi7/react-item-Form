@@ -1,6 +1,4 @@
 import React from "react";
-import "./App-two.scss";
-
 function Title({ children }) {
   return (
     <div>

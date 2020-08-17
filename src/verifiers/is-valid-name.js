@@ -1,13 +1,5 @@
-const isValidName = (nameValue, setNameError) => {
-  if (!nameValue.match(/^[a-z]{3,9}$/)) {
-    setNameError(true);
-  } else if (nameValue === "") {
-    setNameError(false);
-  } else {
-    setNameError(false);
-  }
-
-  return true;
+const isValidName = (nameValue) => {
+  return !nameValue.match(/^[a-z]{3,9}$/) ? false : true;
 };
 
 export default isValidName;

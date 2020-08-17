@@ -11,20 +11,13 @@ function SignUpForm() {
   const [nameValue, setNameValue] = useState("");
   const [passwordValue, setPasswordValue] = useState("");
   const [verificationPasswordValue, setVerificationPassValue] = useState("");
-  const [emailError, setEmailError] = useState(false);
-  const [passwordError, setPasswordError] = useState(false);
-  const [nameError, setNameError] = useState(false);
-  const [verificationPassError, setVerificationPassError] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    isValidEmail(emailValue, setEmailError);
-    isValidPassword(passwordValue, setPasswordError);
-    isValidName(nameValue, setNameError);
-    isValidVerificationPass(
-      verificationPasswordValue,
-      setVerificationPassError
-    );
+    isValidEmail(emailValue);
+    isValidPassword(passwordValue);
+    isValidName(nameValue);
+    isValidVerificationPass(verificationPasswordValue);
   };
 
   return (
@@ -35,8 +28,6 @@ function SignUpForm() {
         value={nameValue}
         setValue={setNameValue}
         className="name"
-        error={nameError}
-        setError={setNameError}
         valid={isValidName}
       />
 
@@ -46,8 +37,6 @@ function SignUpForm() {
         value={emailValue}
         setValue={setEmailValue}
         className="email"
-        error={emailError}
-        setError={setEmailError}
         valid={isValidEmail}
       />
 
@@ -57,8 +46,6 @@ function SignUpForm() {
         value={passwordValue}
         setValue={setPasswordValue}
         className="password-two"
-        error={passwordError}
-        setError={setPasswordError}
         valid={isValidPassword}
       />
 
@@ -68,8 +55,6 @@ function SignUpForm() {
         value={verificationPasswordValue}
         setValue={setVerificationPassValue}
         className="verification-pass"
-        error={verificationPassError}
-        setError={setVerificationPassError}
         valid={isValidVerificationPass}
       />
 

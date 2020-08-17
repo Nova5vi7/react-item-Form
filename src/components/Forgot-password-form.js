@@ -5,11 +5,10 @@ import isValidEmail from "../verifiers/is-valid-email";
 
 function ForgotPassForm() {
   const [emailValue, setEmailValue] = useState("");
-  const [emailError, setEmailError] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    isValidEmail(emailValue, setEmailError);
+    isValidEmail(emailValue);
   };
 
   return (
@@ -20,8 +19,6 @@ function ForgotPassForm() {
         value={emailValue}
         setValue={setEmailValue}
         className="email-two"
-        error={emailError}
-        setError={setEmailError}
         valid={isValidEmail}
       />
 

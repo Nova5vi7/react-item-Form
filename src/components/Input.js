@@ -6,8 +6,7 @@ function Input({
   value,
   setValue,
   className,
-  error,
-  setError,
+
   valid,
 }) {
   const [inputActive, setInputActive] = useState(false);
@@ -19,24 +18,22 @@ function Input({
   const handleBlur = (e) => {
     setInputActive(false);
     setValue(e.currentTarget.value);
-    if (e.currentTarget.value === "") {
-      setError(false);
-    }
   };
 
   const handleChange = (e) => {
     setValue(e.currentTarget.value);
-    valid(value, setError);
-    if (e.currentTarget.value === "") {
-      setError(false);
-    }
+    valid(value);
   };
 
   return (
     <div>
       <label
         className={
-          error ? "label-red" : inputActive || value ? "active" : "inactive"
+          valid(value)
+            ? "label-red"
+            : inputActive || value
+            ? "active"
+            : "inactive"
         }
       >
         {placeholder}
@@ -48,7 +45,7 @@ function Input({
           onChange={handleChange}
           onFocus={handleFocus}
           onBlur={handleBlur}
-          className={value === "" ? null : error ? "color-red" : null}
+          className={value === "" ? null : valid(value) ? "color-red" : null}
         />
       </div>
     </div>

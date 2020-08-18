@@ -18,9 +18,10 @@ function Input({ placeholder, type, value, setValue, className, valid }) {
   };
 
   const labelNameClass = () => {
-    if (!valid(value)) {
-      return "label-red";
-    } else if (inputActive || value) {
+    if (inputActive || value) {
+      if (value !== "" && valid(value)) {
+        return "active label-red";
+      }
       return "active";
     } else {
       return "inactive";
@@ -30,7 +31,7 @@ function Input({ placeholder, type, value, setValue, className, valid }) {
   const inputNameClass = () => {
     if (value === "") {
       return null;
-    } else if (!valid(value)) {
+    } else if (valid(value)) {
       return "color-red";
     } else {
       return null;

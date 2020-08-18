@@ -1,5 +1,9 @@
 const isValidName = (nameValue) => {
-  return !nameValue.match(/^[a-z]{3,9}$/) ? false : true;
+  return Boolean(
+    !nameValue.match(
+      /^(([A-Za-z]+[\-\']?)*([A-Za-z]+)?\s)+([A-Za-z]+[\-\']?)*([A-Za-z]+)?$/
+    )
+  );
 };
 
 export default isValidName;

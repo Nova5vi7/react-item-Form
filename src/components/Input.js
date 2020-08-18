@@ -1,14 +1,6 @@
 import React, { useState } from "react";
 
-function Input({
-  placeholder,
-  type,
-  value,
-  setValue,
-  className,
-
-  valid,
-}) {
+function Input({ placeholder, type, value, setValue, className, valid }) {
   const [inputActive, setInputActive] = useState(false);
 
   const handleFocus = () => {
@@ -25,19 +17,29 @@ function Input({
     valid(value);
   };
 
+  const labelNameClass = () => {
+    if (!valid(value)) {
+      return "label-red";
+    } else if (inputActive || value) {
+      return "active";
+    } else {
+      return "inactive";
+    }
+  };
+
+  const inputNameClass = () => {
+    if (value === "") {
+      return null;
+    } else if (!valid(value)) {
+      return "color-red";
+    } else {
+      return null;
+    }
+  };
+
   return (
     <div>
-      <label
-        className={
-          valid(value)
-            ? "label-red"
-            : inputActive || value
-            ? "active"
-            : "inactive"
-        }
-      >
-        {placeholder}
-      </label>
+      <label className={labelNameClass()}>{placeholder}</label>
       <div className={className}>
         <input
           type={type}
@@ -45,7 +47,7 @@ function Input({
           onChange={handleChange}
           onFocus={handleFocus}
           onBlur={handleBlur}
-          className={value === "" ? null : valid(value) ? "color-red" : null}
+          className={inputNameClass()}
         />
       </div>
     </div>

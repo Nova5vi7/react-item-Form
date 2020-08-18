@@ -1,9 +1,9 @@
 const isValidVerificationPassword = (verificationPasswordValue) => {
-  return !verificationPasswordValue.match(
-    /(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{6,}/g
-  )
-    ? false
-    : true;
+  return Boolean(
+    !verificationPasswordValue.match(
+      /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/
+    )
+  );
 };
 
 export default isValidVerificationPassword;

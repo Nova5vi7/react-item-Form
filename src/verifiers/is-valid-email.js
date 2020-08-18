@@ -1,7 +1,9 @@
 const isValidEmail = (emailValue) => {
-  return !emailValue.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{4,})$/i)
-    ? false
-    : true;
+  return Boolean(
+    !emailValue.match(
+      /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{4,})$/i
+    )
+  );
 };
 
 export default isValidEmail;

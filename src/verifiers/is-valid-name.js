@@ -1,8 +1,6 @@
 const isValidName = (nameValue) => {
   return Boolean(
-    !nameValue.match(
-      /^(([A-Za-z]+[\-\']?)*([A-Za-z]+)?\s)+([A-Za-z]+[\-\']?)*([A-Za-z]+)?$/
-    )
+    !nameValue.match(/^(?=[a-zA-Z0-9._]{8,20}$)(?!.*[_.]{2})[^_.].*[^_.]$/)
   );
 };
 
